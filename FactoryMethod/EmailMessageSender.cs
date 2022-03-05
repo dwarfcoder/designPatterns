@@ -1,15 +1,15 @@
 namespace DesignPatterns.FactoryMethod;
 
-public class TextMessageSender : MessageSender
+public sealed class EmailMessageSender : MessageSender
 {
-    // In real world app this class could contain an interface for Text Message Service to do a real job.
-    // In this example I just implement output to console
+    // Here is just an example. In real world app you shoud inject and use
+    // some sort of TcpClient or something. We'll talk about it later
 
     public override void Send(Message msg)
     {
         var recipients = string.Join(",", msg.Recepients);
 
-        Console.WriteLine(nameof(TextMessageSender));
+        Console.WriteLine(nameof(EmailMessageSender));
         Console.WriteLine($"From: {msg.Sender}");
         Console.WriteLine($"To: {recipients}");
         Console.WriteLine(msg.Title);

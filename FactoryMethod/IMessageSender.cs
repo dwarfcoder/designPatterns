@@ -1,3 +1,5 @@
+namespace DesignPatterns.FactoryMethod;
+
 public interface IMessageSender {
     void Send(Message msg);
 

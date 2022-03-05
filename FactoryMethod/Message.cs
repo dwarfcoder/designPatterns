@@ -1,3 +1,5 @@
+namespace DesignPatterns.FactoryMethod;
+
 public class Message {
     public string Title { get; set; }
 
