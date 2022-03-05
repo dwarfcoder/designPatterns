@@ -2,12 +2,12 @@ namespace DesignPatterns.FactoryMethod;
 
 public class Runner : IRunner
 {
-    public void Run()
+    public async Task RunAsync()
     {
         var msg = MessageHelper.CreateDefaultMessage();
         var type = MessageType.Email;
 
         IMessageSender sender = MessageHelper.GetSender(type);
-        sender.Send(msg);        
+        await sender.SendAsync(msg);
     }
 }

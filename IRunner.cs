@@ -1,5 +1,5 @@
 namespace DesignPatterns;
 
 public interface IRunner {
-    void Run();
+    Task RunAsync();
 }
