@@ -1,3 +1,5 @@
+using DesignPatterns.Models;
+
 namespace DesignPatterns.FactoryMethod;
 
 public sealed class EmailMessageSender : MessageSender

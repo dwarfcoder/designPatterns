@@ -1,3 +1,5 @@
+using DesignPatterns.Models;
+
 namespace DesignPatterns.FactoryMethod;
 
 public class TextMessageSender : MessageSender
@@ -12,7 +14,6 @@ public class TextMessageSender : MessageSender
         Console.WriteLine(nameof(TextMessageSender));
         Console.WriteLine($"From: {msg.Sender}");
         Console.WriteLine($"To: {recipients}");
-        Console.WriteLine(msg.Title);
         Console.WriteLine();
         Console.WriteLine(msg.Body);
     }

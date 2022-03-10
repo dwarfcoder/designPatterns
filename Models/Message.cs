@@ -1,6 +1,8 @@
-namespace DesignPatterns.FactoryMethod;
+namespace DesignPatterns.Models;
 
 public class Message {
+    public MessageType MessageType { get; set; }
+
     public string Title { get; set; }
 
     public string Body { get;set; }

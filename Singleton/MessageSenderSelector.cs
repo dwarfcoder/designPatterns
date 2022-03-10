@@ -1,4 +1,5 @@
 using DesignPatterns.FactoryMethod;
+using DesignPatterns.Models;
 
 namespace DesignPatterns.Singleton;
 
@@ -16,9 +17,9 @@ public sealed class MessageSenderSelector: IMessageSenderSelector {
 
     public static MessageSenderSelector Instance => lazy.Value;
 
-    public IMessageSender GetSender(MessageType messageType) {
+    public IMessageSender GetSender(Message message) {
 
-        switch(messageType) {
+        switch(message.MessageType) {
             case MessageType.Email:
                 return new EmailMessageSender();
             case MessageType.Text:
@@ -26,6 +27,6 @@ public sealed class MessageSenderSelector: IMessageSenderSelector {
         }
 
         // throw an exception if message sender could not be created
-        throw new ArgumentException(nameof(messageType));
+        throw new ArgumentException(nameof(message));
     }  
 }

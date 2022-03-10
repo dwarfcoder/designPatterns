@@ -1,8 +1,7 @@
-using DesignPatterns.Builder;
 using DesignPatterns.FactoryMethod;
-using DesignPatterns.Models;
+using DesignPatterns.Singleton;
 
-namespace DesignPatterns.Singleton;
+namespace DesignPatterns.Builder;
 
 public class Runner : IRunner
 {
@@ -10,13 +9,12 @@ public class Runner : IRunner
     {
         Console.WriteLine();
         Console.WriteLine("***");
-        Console.WriteLine(nameof(DesignPatterns.Singleton));
-        IConcreteBuilder builder = new TextMessageBuilder();
+        Console.WriteLine(nameof(DesignPatterns.Builder));
+
+        IConcreteBuilder builder = new EmailMessageBuilder();
         var msg = builder.Construct();
 
-        // Use our singleton
         IMessageSenderSelector selector = MessageSenderSelector.Instance;
-
         IMessageSender sender = selector.GetSender(msg);
         await sender.SendAsync(msg);
     }
