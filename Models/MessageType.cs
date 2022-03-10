@@ -1,4 +1,4 @@
-namespace DesignPatterns.FactoryMethod;
+namespace DesignPatterns.Models;
 
 [Flags]
 public enum MessageType : short {

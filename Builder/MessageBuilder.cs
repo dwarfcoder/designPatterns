@@ -1,10 +1,22 @@
-namespace DesignPatterns.FactoryMethod;
+using DesignPatterns.Models;
+
+namespace DesignPatterns.Builder;
 
 public class MessageBuilder {
     private Message msg;
 
     public MessageBuilder() {
         this.msg = new Message();
+    }
+
+    public MessageBuilder Reset() {
+        msg = new Message();
+        return this;
+    }
+
+    public MessageBuilder MessageType(MessageType messageType) {
+        msg.MessageType = messageType;
+        return this;
     }
 
     public MessageBuilder Title(string title) {

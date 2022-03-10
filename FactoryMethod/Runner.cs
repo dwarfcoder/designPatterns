@@ -1,3 +1,7 @@
+using DesignPatterns.Builder;
+using DesignPatterns.Models;
+using DesignPatterns.Singleton;
+
 namespace DesignPatterns.FactoryMethod;
 
 public class Runner : IRunner
@@ -7,10 +11,11 @@ public class Runner : IRunner
         Console.WriteLine();
         Console.WriteLine("***");
         Console.WriteLine(nameof(DesignPatterns.FactoryMethod));
-        var msg = MessageHelper.CreateDefaultMessage();
-        var type = MessageType.Email;
+        IConcreteBuilder builder = new EmailMessageBuilder();
+        var msg = builder.Construct();
 
-        IMessageSender sender = MessageHelper.GetSender(type);
+        IMessageSenderSelector selector = MessageSenderSelector.Instance;
+        IMessageSender sender = selector.GetSender(msg);
         await sender.SendAsync(msg);
     }
 }

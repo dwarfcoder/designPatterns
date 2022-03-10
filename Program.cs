@@ -2,9 +2,13 @@
 using DesignPatterns;
 
 // Factory Method run
-IRunner fmRunner = new DesignPatterns.FactoryMethod.Runner();
-await fmRunner.RunAsync();
+IRunner runner = new DesignPatterns.FactoryMethod.Runner();
+await runner.RunAsync();
 
 // Singleton run
-IRunner sngltnRunner = new DesignPatterns.Singleton.Runner();
-await sngltnRunner.RunAsync();
+runner = new DesignPatterns.Singleton.Runner();
+await runner.RunAsync();
+
+// Builder run
+runner = new DesignPatterns.Builder.Runner();
+await runner.RunAsync();

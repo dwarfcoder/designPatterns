@@ -1,3 +1,5 @@
+using DesignPatterns.Models;
+
 namespace DesignPatterns.FactoryMethod;
 
 public abstract class MessageSender : IMessageSender
