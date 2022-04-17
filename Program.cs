@@ -12,3 +12,7 @@ await runner.RunAsync();
 // Builder run
 runner = new DesignPatterns.Builder.Runner();
 await runner.RunAsync();
+
+// Memento run
+runner = new DesignPatterns.Memento.Runner();
+await runner.RunAsync();
